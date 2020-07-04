@@ -1,0 +1,304 @@
+/* ================================================================
+    SEMAINE 04 - Quote of the Day
+
+    Style de l'affichage de la citation du jour
+=================================================================== */
+
+/* -----------------------------------------------
+Grid sur la PAGE:
+---------------------------------------------- */
+body {
+  width: auto;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* For presentation only, no need to copy the code below */
+/* .grid-container * {
+  position: relative;
+} */
+
+/* --------------------------------------------------
+          Structure du GRID
+----------------------------------------------- */
+.grid-container {
+  position: relative;
+  display: grid;
+  padding: 3px;
+  margin: 20px auto;
+
+  height: 580px;
+  width: 580px;
+
+  border: 3px solid white;
+  border-bottom: 0;
+  background-color: white;
+
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  gap: 4px 4px;
+  grid-template-areas:
+    'item-a' 'item-b' 'item-c' 'item-d' 'item-e'
+    'item-f' 'item-g' 'item-h' 'item-i';
+}
+
+.item-a,
+.item-b,
+.item-c,
+.item-d,
+.item-e,
+.item-f,
+.item-g,
+.item-h,
+.item-i {
+  background-color: white;
+}
+
+/* LIGNE 1 ---------------------------------- */
+.item-a {
+  grid-area: 5 / 1 / 1 / 4;
+}
+
+.item-b {
+  grid-area: 5 / 9 / 1 / 4;
+}
+
+/* LIGNE 2 ---------------------------------- */
+.item-c {
+  grid-area: 5 / 4 / 5 / 1;
+}
+
+.item-d {
+  grid-area: 5 / 4 / 5 / 9;
+}
+
+/* LIGNE 3 ---------------------------------- */
+.item-e {
+  grid-area: 6 / 2 / 9 / 1;
+}
+
+.item-f {
+  grid-area: 6 / 2 / 9 / 5;
+}
+
+.item-g {
+  grid-area: 6 / 5 / 8 / 7;
+}
+
+.item-h {
+  grid-area: 9 / 9 / 6 / 7;
+}
+/* LIGNE 4 ---------------------------------- */
+.item-i {
+  grid-area: 8 / 7 / 9 / 5;
+}
+
+/* -----------------------------------------------
+          Structure du Texte
+----------------------------------------------- */
+h1 {
+  text-align: center;
+}
+
+p {
+  margin: 0;
+}
+footer {
+  margin: 10px;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* -----------------------------------------------
+          ANIMATIONS CSS
+----------------------------------------------- */
+
+/* A - Animation du conteneur */
+@keyframes mainColor {
+  0% {
+    border: 3px solid white;
+    border-bottom: 0;
+    background-color: white;
+  }
+  100% {
+    border: 3px solid black;
+    border-bottom: 0;
+    background-color: black;
+  }
+}
+
+.content {
+  width: repeat(8, 1fr);
+  height: repeat(8, 1fr);
+
+  animation-duration: 15s;
+  animation-delay: 8s;
+  animation-name: mainColor;
+
+  /* A  terme, l'élément reste à son état de fin d'animation */
+  animation-fill-mode: forwards;
+}
+
+/* -----------------------------------------------
+          ANIMATIONS CSS
+----------------------------------------------- */
+
+/* B - Animation des zones de couleurs */
+
+/* -------------  Rectangle ROUGE   --------------- */
+@keyframes redColor {
+  /* TEST 1 : Modification de couleur
+---------------------------------------------
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: crimson;
+  }
+}
+------------------------------------------- */
+
+  /* TEST 2 : Rotation en Y
+-------------------------------------------------
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(100deg);
+  }
+} */
+
+  /* TEST 3 : Variation de la largeur
+----------------------------------------------- */
+  0% {
+    width: 0%;
+    visibility: visible;
+  }
+  100% {
+    width: 100%;
+    visibility: visible;
+  }
+}
+
+.rouge {
+  width: repeat(3, 1fr);
+  height: repeat(4, 1fr);
+  background-color: crimson;
+  visibility: hidden;
+
+  animation-name: redColor;
+  animation-delay: 1s;
+  animation-duration: 5s;
+
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+}
+
+/* -------------  Carré BLEU   --------------- */
+@keyframes blueColor {
+  0% {
+    background-color: blue;
+    transform: scale(0);
+  }
+  100% {
+    background-color: blue;
+    transform: scale(1);
+  }
+}
+
+.bleu {
+  width: repeat(2, 1fr);
+  height: repeat(2, 1fr);
+  background-color: white;
+
+  animation-name: blueColor;
+  animation-delay: 2s;
+  animation-duration: 4s;
+
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+}
+
+/* -------------  Rectangle JAUNE   --------------- */
+@keyframes yellowColor {
+  0% {
+    height: 0%;
+    visibility: visible;
+  }
+  100% {
+    height: 100%;
+    visibility: visible;
+  }
+}
+
+.jaune {
+  width: repeat(1, 1fr);
+  height: repeat(3, 1fr);
+  background-color: yellow;
+  visibility: hidden;
+
+  animation-name: yellowColor;
+  animation-delay: 3s;
+  animation-duration: 5s;
+
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+}
+
+/* C -  Animation de la Citation */
+@keyframes slideQuote {
+  from {
+    margin-top: -10%;
+    height: 0%;
+    visibility: hidden;
+  }
+
+  to {
+    margin-top: 0%;
+    height: 80%;
+    visibility: visible;
+  }
+}
+
+p#quote {
+  font-size: 24px;
+  font-style: italic;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  visibility: hidden;
+
+  padding: 30px;
+  text-align: right;
+
+  animation-name: slideQuote;
+  animation-delay: 4s;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+/* D -  Animation du nom de l'Auteur */
+@keyframes slideAuthor {
+  from {
+    margin-left: 50%;
+    width: 100%;
+    visibility: hidden;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 90%;
+    visibility: visible;
+  }
+}
+
+p#author {
+  color: grey;
+  padding: 35px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  visibility: hidden;
+
+  animation-name: slideAuthor;
+  animation-delay: 5s;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}

@@ -1,0 +1,67 @@
+body {
+  width: auto;
+  color: black;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  color: orangered;
+  text-align: center;
+}
+div,
+p {
+  margin: 30px;
+}
+/* ----------------- NAVIGATION ---------------------- */
+nav,
+ul {
+  margin: 30px;
+  list-style-type: none;
+}
+li {
+  display: inline;
+}
+
+/* Lien vers la page PRECEDENTE */
+a#gauche:link,
+a#gauche:visited,
+a#gauche:hover {
+  text-decoration: none;
+  text-align: left;
+}
+a#gauche:link,
+a#gauche:visited {
+  color: orangered;
+}
+
+/* a#gauche:hover {
+  padding: 5px;
+  color: white;
+  background-color: orangered;
+}
+
+a#droite:hover {
+  padding: 5px;
+  color: white;
+  background-color: orangered;
+} */
+
+/* Lien vers la page SUIVANTE */
+a#droite:link,
+a#droite:visited,
+a#droite:hover {
+  text-decoration: none;
+  text-align: right;
+}
+
+a#droite:link,
+a#droite:visited {
+  color: orangered;
+}
+
+a#gauche:hover,
+a#droite:hover {
+  padding: 5px;
+  color: white;
+  background-color: orangered;
+}

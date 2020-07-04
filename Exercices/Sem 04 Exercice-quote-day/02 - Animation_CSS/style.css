@@ -1,0 +1,131 @@
+/* =====================================================
+      SEMAINE 04 -  Exercices d'Animations CSS
+===================================================== */
+body {
+  width: auto;
+  color: black;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Structure de la Page -------------------------------------- */
+section {
+  margin: 0 auto;
+  padding: 30px;
+}
+h1 {
+  color: black;
+  text-align: center;
+}
+h2 {
+  color: greenyellow;
+}
+h2 > span {
+  color: green;
+}
+footer {
+  margin: 10px;
+  text-align: center;
+  font-size: 12px;
+}
+/* --------------------------------------------------------
+  Exercice 2.1 : Objet en animation
+----------------------------------------------------- */
+
+/* Zone de déplacement de l'objet */
+article {
+  margin: 0 auto;
+  padding: 15px;
+  width: 700px;
+  height: 600px;
+  background-color: black;
+  border: 6px solid gold;
+}
+
+/* -----------------------------------------------------
+      Structure de l'animation
+----------------------------------------------------- */
+
+/* a) Création de la DIV à animer : CARRE ---------------------- */
+/* div.carre {
+  width: 200px;
+  height: 200px;
+  background-color: crimson;
+} */
+
+/* b) Keyframe MOVE -------------------------------------------- */
+@keyframes move {
+  /* c) Changement de couleur à 0%, 25%, 50%, 75%, 100% -------- */
+
+  /* d) Déplacement selon un chemin carré ------------------------ */
+  /*    Sens contraire des aiguilles d'une montre */
+
+  0% {
+    background-color: blue;
+
+    /* Départ: En haut à gauche */
+    transform: translate(0px, 0px);
+  }
+  25% {
+    background-color: green;
+
+    /* Chemin 1 : De haut en bas */
+    transform: translate(0px, 400px);
+  }
+  50% {
+    background-color: yellow;
+
+    /* Chemin 2 : De gauche à droite */
+    transform: translate(500px, 400px);
+  }
+  75% {
+    background-color: purple;
+
+    /* Chemin 3 : De bas en haut */
+    transform: translate(500px, 0px);
+  }
+  100% {
+    background-color: blue;
+
+    /* Chemin 4 : De droite à gauche */
+    /* Retour au point de départ */
+    transform: translate(0px, 0px);
+  }
+}
+
+.carre {
+  /* a) Création de la DIV à animer : CARRE -------------------- */
+  width: 200px;
+  height: 200px;
+  /* background-color: crimson; */
+
+  animation-name: move;
+  animation-duration: 10s;
+
+  /* e) Répétition de l'animation à l'infini ------------------- */
+  animation-iteration-count: infinite;
+
+  /* f) Animation alternativement à l'endroit et à l'envers ---- */
+  animation-direction: alternate-reverse;
+}
+
+/* -----------------------------------------------------
+  Exercice 2.2 :
+        https://www.w3schools.com/css/exercise.asp?filename=exercise_css3_transitions1
+----------------------------------------------------- */
+a.lienExo:link,
+a.lienExo:visited,
+a.lienExo:hover {
+  text-decoration: none;
+  color: crimson;
+}
+
+/* -----------------------------------------------------
+  Exercice 2.3 :
+        https://www.w3schools.com/css/exercise.asp?filename=exercise_css3_animations1
+----------------------------------------------------- */
+
+/* -----------------------------------------------------
+  Exercice 2.4 :
+        Work in progress ...
+----------------------------------------------------- */

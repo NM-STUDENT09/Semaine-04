@@ -1,0 +1,16 @@
+/* -------------------------------------------------------
+  Exercise 2.2 :
+      Add a 2 second transition effect for width changes of the <div> element.
+---------------------------------------------------------- */
+div {
+  margin: 30px;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+div:hover {
+  width: 300px;
+  /* Ajout de la durée de la transition */
+  transition: 2s;
+}

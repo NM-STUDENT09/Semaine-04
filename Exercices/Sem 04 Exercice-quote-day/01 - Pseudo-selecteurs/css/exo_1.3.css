@@ -1,0 +1,36 @@
+h1.exo {
+  color: black;
+  text-align: left;
+  margin: auto 30px;
+}
+
+div {
+  padding: 20px 5px;
+  border: 1px solid grey;
+}
+/* ---------------------------------------------------
+        Exercise:
+            Set the background color for visited and unvisited links to "lightblue", and the background color for the hover and active link states to "yellow".
+    ---------------------------------------------------- */
+/* -------------------------------------------------
+Solutions de l'exercice
+--------------------------------------------------- */
+/* unvisited link */
+a:link {
+  background-color: lightblue;
+}
+
+/* visited link */
+a:visited {
+  background-color: lightblue;
+}
+
+/* mouse over link */
+a:hover {
+  background-color: yellow;
+}
+
+/* selected link */
+a:active {
+  background-color: yellow;
+}

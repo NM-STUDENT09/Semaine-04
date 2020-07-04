@@ -1,0 +1,30 @@
+/* ---------------------------------------------------
+Exercise:
+Set the border to "2px solid green" for table, th and td elements.
+---------------------------------------------------- */
+table {
+  width: 95%;
+  margin: auto 30px;
+
+  /* Bordure du Tableau */
+  border: 2px solid green;
+}
+th,
+td {
+  /* Bordure du TableData */
+  border: 2px solid green;
+  padding: 10px;
+}
+th {
+  background-color: greenyellow;
+  text-transform: uppercase;
+  color: green;
+  font-size: 20px;
+}
+td,
+tr:nth-child(even) {
+  background: beige;
+}
+tr:nth-child(odd) {
+  background: white;
+}

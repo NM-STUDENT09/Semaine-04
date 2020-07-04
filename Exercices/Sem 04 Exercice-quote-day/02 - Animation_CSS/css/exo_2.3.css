@@ -1,0 +1,38 @@
+body {
+  width: auto;
+  color: black;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  color: orangered;
+  text-align: center;
+}
+section,
+p {
+  margin: 30px;
+}
+/* -------------------------------------------------------
+      Exercise 2.3 :
+          Add a 2 second animation for the <div> element, which changes the color from red to blue. Call the animation "example"
+---------------------------------------------------------- */
+
+/*transition-delay: 0.4s;  Démarre au bout de 0,4s */
+
+div.example {
+  margin: 30px;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 2s;
+}
+
+@keyframes example {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: blue;
+  }
+}

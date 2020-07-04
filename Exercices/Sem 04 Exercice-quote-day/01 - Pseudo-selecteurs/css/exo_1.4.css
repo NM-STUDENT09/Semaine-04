@@ -1,0 +1,9 @@
+/* ---------------------------------------------------
+  Exercise:
+      Set text color to red, for the first line of the <p> element.
+---------------------------------------------------- */
+
+/* Sélection de la 1ère ligne du paragraphe */
+p::first-line {
+  color: red;
+}

@@ -1,0 +1,202 @@
+/* =====================================================
+      SEMAINE 04 -  Exercices sur les Pseudo-selecteurs
+===================================================== */
+/* -----------------------------------------------------
+  Exercice 1.0 : CSS Diner - https://flukeout.github.io/
+----------------------------------------------------- */
+
+/* --------------------------------------------------------
+  Exercice 1.1 : Style des liens
+----------------------------------------------------- */
+body {
+  width: auto;
+  color: black;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Structure de la Page -------------------------------------- */
+div.main {
+  margin: 0 auto;
+  padding: 30px;
+}
+
+/* Structure du Texte -------------------------------------- */
+h1 {
+  color: black;
+  text-align: center;
+}
+h2 {
+  color: greenyellow;
+}
+h2 > span {
+  color: green;
+}
+ul {
+  margin: 10px;
+}
+p,
+li {
+  margin: 18px;
+}
+img {
+  width: 20%;
+  margin: 0 auto;
+}
+footer {
+  margin: 10px;
+  text-align: center;
+  font-size: 12px;
+}
+/* --------------------------------------------------------
+  Exercice 1.1 : Style des liens
+----------------------------------------------------- */
+/* a) Création des 5 liens */
+a:link,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+a:link {
+}
+a:visited {
+}
+a:hover {
+  font-weight: bolder;
+}
+
+/* b) Lien avec couleur prédominante symbolisant chaque site
+*/
+#link_1 {
+  color: #009793;
+}
+#link_2 {
+  color: #f16e00;
+}
+#link_3 {
+  color: #5c2d91;
+}
+#link_4 {
+  color: #f03e34;
+}
+#link_5 {
+  color: #d4007a;
+}
+
+/* c) Style des liens survolés */
+/*
+  Modification : Plutôt que de foncer la couleur, j'ai oter la couleur du FONT pour lui attribuer un fond de la couleur de sa dominante.
+*/
+#link_1:hover,
+#link_2:hover,
+#link_3:hover,
+#link_4:hover,
+#link_5:hover {
+  padding: 5px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#link_1:hover {
+  background-color: #009793;
+}
+#link_2:hover {
+  background-color: #f16e00;
+}
+#link_3:hover {
+  background-color: #5c2d91;
+}
+#link_4:hover {
+  background-color: #f03e34;
+}
+#link_5:hover {
+  background-color: #d4007a;
+}
+
+/* d) Le contenu de chaque lien s'affiche avant et après comme suite; ">"(devant) et "<"(derrière)
+*/
+a#link_1::before,
+a#link_2::before,
+a#link_3::before,
+a#link_4::before,
+a#link_5::before {
+  content: 'This is a link -> ';
+}
+a#link_1::after,
+a#link_2::after,
+a#link_3::after,
+a#link_4::after,
+a#link_5::after {
+  content: ' <- Click on me';
+}
+
+/* --------------------------------------------------------
+  Exercice 1.2 : Structure du Tableau
+----------------------------------------------------- */
+
+/* a)  Tableau dans HTML */
+table {
+  /* b) Occupation de toute la largeur */
+  width: 100%;
+  margin: 30px auto;
+}
+
+/* c) Style des TableData et TableHeader */
+th {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: white;
+  /* g) Sélection des TableHeader : Padding 12PX haut et bas */
+  /* Padding de 8PX (c) */
+  padding: 12px 8px;
+  /* Bordure (c) */
+  border: 1px solid #088e81;
+  background-color: cadetblue;
+}
+td {
+  padding: 8px;
+}
+td,
+th {
+  border: 1px solid #088e81;
+}
+
+/* Sélection colorées des TableRow */
+
+/* d) Couleur 1 pour les TableRow ou Rangées paires */
+tr:nth-child(even) {
+  background: beige;
+}
+
+/* e) Couleur 2 pour les TableRow ou Rangées impaires */
+tr:nth-child(odd) {
+  background: #c5f9f8;
+}
+
+/* f) Effet de survol sur les TableRow: Légère modification de couleur */
+tr:nth-child(even):hover {
+  background: bisque;
+}
+tr:nth-child(odd):hover {
+  background: #99c4c2;
+}
+
+/* -----------------------------------------------------
+  Exercice 1.2 :
+        Référence: https://www.w3schools.com/css/exercise.asp?filename=exercise_table1
+----------------------------------------------------- */
+
+/* -----------------------------------------------------
+  Exercice 1.3 : Pseudo-classes
+        https://www.w3schools.com/css/exercise.asp?filename=exercise_pseudo_classes1
+----------------------------------------------------- */
+
+/* -----------------------------------------------------
+  Exercice 1.4 : Pseudo-éléments
+        https://www.w3schools.com/css/exercise.asp?filename=exercise_pseudo_elements1
+----------------------------------------------------- */
+a.lienExo:link,
+a.lienExo:visited,
+a.lienExo:hover {
+  text-decoration: none;
+  color: crimson;
+}
